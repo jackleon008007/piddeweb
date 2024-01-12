@@ -1,0 +1,47 @@
+
+
+div {
+  overflow: inherit;
+}
+
+
+a{
+  text-decoration: none;
+  font-size: 110%;
+  white-space: normal;
+}
+a:hover{
+  color: blueviolet;
+  background-color: #ffff;
+}
+
+button{
+  font-size: 110%;
+  min-width: min-content;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-sidenav-content{
+  font-size: 200%;
+  text-align: center;
+}
+.sidenav-container{
+  height: 100%;
+}
+
+.mat-icon-portfolio{
+  width: 100px;
+  height: 100px;
+}
+
+.tool-bar{
+  position: fixed;
+  z-index: 1;
+}

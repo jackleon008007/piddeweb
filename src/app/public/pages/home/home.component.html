@@ -1,0 +1,50 @@
+
+<div class="carousel">
+
+  <div class="slides">
+
+    <div *ngFor="let slide of slides; let i = index"
+         [class.active]="i === currentSlide">
+      <img [src]="slide.image" alt="d">
+    </div>
+
+  </div>
+  <button class="prev" (click)="onPreviousClick()" mat-button>Prev</button>
+  <button class="next" (click)="onNextClick()" mat-button>Next</button>
+
+</div>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Pedidos sencillos alcance de tus manos</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+
+    </mat-card-header>
+    <mat-card-content class="description-app-content">
+      <a href="#" class="download-button">
+        <i class="fas fa-download"></i>
+        Descargar App
+      </a>
+
+      <p>
+        Bienvenido a la app móvil de Vega Distribuciones, diseñada para que los bodegueros clientes de Vega y Procter & Gamble realicen sus pedidos de forma rápida y sencilla directamente desde su teléfono.
+
+        Con nuestra aplicación podrá consultar el catálogo completo de productos P&G, realizar su pedido con unos pocos clics y obtener la confirmación al instante. Olvídese de tediosas llamadas telefónicas o planillas de pedido manuales.
+
+        Características principales:
+
+        Catálogo de productos P&G siempre actualizado
+        Búsqueda inteligente por nombre o código de producto
+        Fácil selección de unidades por producto
+        Resumen de pedido con totales
+        Notificación instantánea al confirmar el pedido
+        Historial completo de pedidos realizados
+        Soporte en línea por chat en caso de dudas
+        Desarrollada pensando 100% en las necesidades del bodeguero, nuestra aplicación le permitirá ahorrar tiempo valioso en la gestión de sus pedidos a P&G y potenciar su negocio.
+
+        No pierda oportunidades de venta por desabastecimiento. Con la app móvil de Vega Distribuciones en su teléfono, podrá tener siempre a mano el catálogo completo de productos P&G y hacer su pedido en cuestión de minutos.
+
+        Descargue ya la app y comience a disfrutar de una experiencia de compra rápida y sencilla pensada para usted.
+      </p>
+    </mat-card-content>
+
+  </mat-card>
