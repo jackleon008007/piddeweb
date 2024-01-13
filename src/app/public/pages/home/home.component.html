@@ -1,21 +1,26 @@
-
-<div class="carousel">
-
-  <div class="slides">
-
-    <div *ngFor="let slide of slides; let i = index"
-         [class.active]="i === currentSlide">
-      <img [src]="slide.image" alt="d">
-    </div>
-
+<div class="jk-carousel" [ngStyle]="{'min-height':finalHeight}">
+  <div class="jk-carousel__btns">
+    <i class="fa fa-chevron-circle-left" (click)="setBack()"></i>
+    <i class="fa fa-chevron-circle-right" (click)="setNext()"></i>
   </div>
-  <button class="prev" (click)="onPreviousClick()" mat-button>Prev</button>
-  <button class="next" (click)="onNextClick()" mat-button>Next</button>
+  <div class="jk-carousel__content">
+    <ng-container *ngFor="let section of items;">
+      <div class="jk-carousel__content-item" [ngStyle]="{'background-image':'url('+section.image+')', 'margin-left': section.marginLeft+'%'}">
+        <h1><span></span></h1>
+        <p>{{section.subtitle}}</p>
+      </div>
+    </ng-container>
+  </div>
+  <div class="jk-carousel__steps">
+    <div class="jk-carousel__steps-step jk-carousel__steps-step-{{currentPosition===item.id?'active':''}}" *ngFor="let item of items" (click)="setCurrentPosition(item.id)">
 
+    </div>
+  </div>
 </div>
+
   <mat-card class="example-card">
     <mat-card-header>
-      <mat-card-title>Pedidos sencillos alcance de tus manos</mat-card-title>
+      <mat-card-title>Realiza compras de productos Vega y P&G</mat-card-title>
       <mat-card-subtitle></mat-card-subtitle>
 
     </mat-card-header>

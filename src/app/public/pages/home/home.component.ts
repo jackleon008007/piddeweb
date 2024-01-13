@@ -1,4 +1,5 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import {ICarouselItem} from "../../model/ICarouselItem";
 
 @Component({
   selector: 'app-home',
@@ -7,32 +8,105 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 })
 export class HomeComponent implements OnInit, AfterViewInit{
 
-  val:string="hola mundo";
-  x:boolean= true;
 
-  slides = [
-    {'image': 'assets/home-slide-1.jpg'},
+  @Input() height =500;
+  @Input() isFullScreen = false;
+  @Input() items:ICarouselItem[]=[
+    {
+      id:1,
+      title:{
+        first: 'TITULO',
+        second:'Principal',
+      },
+      subtitle:'',
+      link:'/',
+      image:'assets/pidde-slide-1.jpg',
+      marginLeft:0
+    },
+    {
+      id:1,
+      title:{
+        first: 'TITULO',
+        second:'Principal',
+      },
+      subtitle:'',
+      link:'/',
+      image:'assets/pidde-slide-2.jpg',
+      marginLeft:0
+    },
+    {
+      id:1,
+      title:{
+        first: 'TITULO',
+        second:'Principal',
+      },
+      subtitle:'',
+      link:'/',
+      image:'assets/pidde-slide-3.jpg',
+      marginLeft:0
+    },
+    {
+      id:1,
+      title:{
+        first: 'TITULO',
+        second:'Principal',
+      },
+      subtitle:'',
+      link:'/',
+      image:'assets/pidde-slide-4.jpg',
+      marginLeft:0
+    },
+
   ];
 
-  currentSlide = 0;
 
-  onPreviousClick() {
-    const previous = this.currentSlide - 1;
-    this.currentSlide = previous < 0 ? this.slides.length - 1 : previous;
+
+  public finalHeight: string|number=0;
+  public currentPosition =0;
+  constructor() {
+    this.finalHeight = this.isFullScreen? '100vh' : `${this.height}px`;
   }
-
-  onNextClick() {
-    const next = this.currentSlide + 1;
-    this.currentSlide = next === this.slides.length ? 0 : next;
-  }
-
   ngOnInit(): void {
-    this.val = "hola peru";
+    this.items.map((i,index)=>{
+      i.id = index;
+      i.marginLeft =0;
+
+    });
   }
 
-  isView(){
-    return this.x;
+  setCurrentPosition(positon:number){
+    this.currentPosition =positon;
+    // @ts-ignore
+    this.items.find(i => i.id===0).marginLeft = -100 * positon;
   }
+  setNext(){
+    let finalPercentage =0;
+    let nextPosition = this.currentPosition+1;
+    if(nextPosition <= this.items.length-1){
+      finalPercentage =-100*nextPosition;
+    }else{
+      nextPosition=0;
+    }
+    // @ts-ignore
+    this.items.find(i =>i.id===0).marginLeft = finalPercentage;
+    this.currentPosition = nextPosition;
+  }
+  setBack(){
+    let finalPercentage =0;
+    let backPosition = this.currentPosition-1;
+    if(backPosition>=0){
+      finalPercentage =-100*backPosition;
+    }else{
+      backPosition =this.items.length-1;
+      finalPercentage = -100*backPosition;
+    }
+    // @ts-ignore
+    this.items.find(i=>i.id===0).marginLeft= finalPercentage;
+    this.currentPosition =backPosition;
+  }
+
+
+
 
   ngAfterViewInit(): void {
   }
