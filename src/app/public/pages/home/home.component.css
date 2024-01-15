@@ -177,5 +177,7 @@ img {
   background: #ECEFF1;
 }
 
-
+span{
+  display: list-item;
+}
 
