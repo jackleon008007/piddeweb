@@ -23,40 +23,6 @@ export class HomeComponent implements OnInit, AfterViewInit{
       image:'assets/pidde-slide-1.jpg',
       marginLeft:0
     },
-    {
-      id:1,
-      title:{
-        first: 'TITULO',
-        second:'Principal',
-      },
-      subtitle:'',
-      link:'/',
-      image:'assets/pidde-slide-2.jpg',
-      marginLeft:0
-    },
-    {
-      id:1,
-      title:{
-        first: 'TITULO',
-        second:'Principal',
-      },
-      subtitle:'',
-      link:'/',
-      image:'assets/pidde-slide-3.jpg',
-      marginLeft:0
-    },
-    {
-      id:1,
-      title:{
-        first: 'TITULO',
-        second:'Principal',
-      },
-      subtitle:'',
-      link:'/',
-      image:'assets/pidde-slide-4.jpg',
-      marginLeft:0
-    },
-
   ];
 
 

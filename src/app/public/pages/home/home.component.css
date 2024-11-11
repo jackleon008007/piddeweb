@@ -26,7 +26,7 @@ img {
   margin: 1vh;
   top: 40%;
   transform: translateY(-50%);
-  height:40px; background-color: #43bdf3;
+  height:40px; background-color: #f1a52a;
   color: aliceblue;
   border-color: azure;
   border-radius: 30px;
@@ -45,7 +45,7 @@ img {
 .download-button {
   display: inline-block;
   padding: 15px 30px;
-  background: #54c0d3;
+  background: #ff6c3e;
   color: #fff;
   text-decoration: none;
   margin-top: 2vh;
@@ -63,14 +63,14 @@ img {
   line-height: 30px;
   text-align: center;
   background: #fff;
-  color: #55a2c4;
+  color: #fbaf5b;
   border-radius: 50%;
   margin-right: 10px;
   transition: transform 0.3s ease;
 }
 
 .download-button:hover {
-  background: #158fc9;
+  background: #f46700;
 }
 
 .download-button:hover i {
@@ -127,7 +127,7 @@ img {
 }
 
 .jk-carousel__content-item h1 span {
-  color: #039be5;
+  color: #f46700;
 }
 
 .jk-carousel__content-item p {
